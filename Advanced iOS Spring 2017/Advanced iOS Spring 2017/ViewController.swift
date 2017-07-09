@@ -10,12 +10,18 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var cityLabel: UILabel!
+  
+  @IBOutlet weak var tempLabel: UILabel!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        let weather = WeatherFetch()
-        weather.getWeather(city: "")
+             
+      let weather = Weather(city: "Mumbai", temperature: 27, picture: nil)
+      cityLabel.text = weather!.city
+        tempLabel.text = "\(weather!.temperature)"
+      
     }
 
     override func didReceiveMemoryWarning() {
